@@ -1,0 +1,105 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Gracias por tu compra!</title>
+  <style>
+    body {
+      background-color: #fff8e1;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 80px;
+      animation: fadeIn 1.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      color: #d77f2a;
+      font-size: 42px;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { text-shadow: 0 0 10px #ffb366; }
+      50% { text-shadow: 0 0 25px #ff8c1a; }
+    }
+
+    p {
+      font-size: 20px;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .mensaje-extra {
+      font-size: 22px;
+      color: #b5651d;
+      font-weight: bold;
+      margin-top: 25px;
+    }
+
+    button {
+      margin-top: 40px;
+      background-color: #d77f2a;
+      color: white;
+      border: none;
+      padding: 12px 22px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #f3a45d;
+      transform: scale(1.07);
+    }
+
+    /* decoraciones de pan */
+    .panes {
+      font-size: 50px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>¡Gracias por tu pedido! 🎉🥐</h1>
+  <p>Tu compra ha sido recibida con éxito.</p>
+  <p>En breve te contactaremos para confirmar tu pedido.</p>
+  <p>Panadería La Espiga Dorada 🍞</p>
+
+  <!-- Mensaje bonito adicional -->
+  <p class="mensaje-extra">Gracias por apoyar el pan artesanal hecho con amor ❤️‍🔥🍞</p>
+
+  <!-- Decoración dulce -->
+  <div class="panes">🥖 🥐 🍞 🍪 🧁 🥨</div>
+
+  <!-- Botón para regresar -->
+  <button onclick="window.location.href='panaderia.html'">Volver al inicio</button>
+
+  <!-- 🎊 Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+  <script>
+    function confettiParty() {
+      const duration = 2200;
+      const end = Date.now() + duration;
+      (function frame() {
+        confetti({
+          particleCount: 4,
+          startVelocity: 25,
+          spread: 360,
+          ticks: 90,
+          origin: { x: Math.random(), y: Math.random() - 0.2 }
+        });
+        if (Date.now() < end) requestAnimationFrame(frame);
+      })();
+    }
+    confettiParty();
+  </script>
+
+</body>
+</html>
